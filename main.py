@@ -11,10 +11,10 @@ app = FastAPI()
 # Load the model
 # Using a try-except block just in case the model is not found during initial startup or testing
 try:
-    model = tf.keras.models.load_model("potato_model.h5")
+    model = tf.keras.models.load_model("potato_disease_model.h5")
 except Exception as e:
     model = None
-    print("Warning: Model could not be loaded. Please ensure 'potato_model.h5' exists in the backend directory.")
+    print("Warning: Model could not be loaded. Please ensure 'potato_disease_model.h5' exists in the backend directory.")
 
 # Keras ImageDataGenerator sorts class indices alphanumerically
 CLASS_NAMES = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
